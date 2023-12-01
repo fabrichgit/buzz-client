@@ -1,0 +1,114 @@
+#bubbleMenu{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.842);
+    display: none;
+}
+
+#bubbleMenu .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-6deg);
+    animation: rotat 0.5s ease-out;
+}
+
+@keyframes rotat {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#bubbleMenu .container div{
+    position: absolute;
+    width: 45px;
+    height: 85vw;
+}
+
+#bubbleMenu .container div .icon{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    z-index: 9;
+}
+
+#bubbleMenu .container div.search{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bubbleMenu .container div.profil{
+    transform: rotate(-57deg);
+}
+
+#bubbleMenu .container div.profil .icon{
+    transform: rotate(62deg);
+}
+
+#bubbleMenu .container div.feed .icon{
+    transform: rotate(9deg);
+}
+
+#bubbleMenu .container div.setting{
+    transform: rotate(123deg);
+}
+
+#bubbleMenu .container div.setting .icon{
+    transform: rotate(-117deg);
+}
+
+#bubbleMenu .container div.feedback{
+    transform: rotate(-123deg);
+}
+
+#bubbleMenu .container div.feedback .icon{
+    transform: rotate(130deg);
+}
+
+#bubbleMenu .container div.chat{
+    transform: rotate(57deg);
+}
+
+#bubbleMenu .container div.chat .icon{
+    transform: rotate(-45deg);
+}
+
+#bubbleMenu .container div.logout{
+    transform: rotate(180deg);
+}
+
+#bubbleMenu .container div.logout .icon{
+    transform: rotate(-175deg);
+}
+
+
+
+
+
+.showAnimation{
+    animation: show 1s 0.2s forwards;
+}
+@keyframes show {
+    to{
+        padding-top: 0;
+        opacity: 1;
+    }
+}
+
+
+
+@media screen and (max-width: 510px) {
+    #bubbleMenu{
+        display: flex;
+    }
+}

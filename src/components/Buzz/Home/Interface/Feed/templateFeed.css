@@ -1,0 +1,117 @@
+.one-feed{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(19, 20, 20);
+    border-radius: 10px;
+}
+
+.one-feed .info{
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.one-feed .info .info-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.one-feed .info .info-text .name{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.one-feed .info .info-text .name .info-mood, .one-feed .info .info-text .when{
+    font-size: small;
+    font-style: italic;
+}
+
+.one-feed .info .info-text .name .info-name{
+    font-size: larger;
+    color: rgb(48, 146, 146);
+    font-weight: bold;
+}
+
+.one-feed .text{
+    width: 100%;
+    text-align: start;
+}
+
+.one-feed .info .option{
+    position: absolute;
+    right: 0;
+}
+
+.one-feed .info .option .icon{
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    color: rgb(16, 146, 146);
+}
+
+.one-feed .image-feed{
+    width: 100%;
+    height: auto;
+}
+
+.one-feed .actions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 30px;
+    width: 100%;
+}
+
+.one-feed .actions div .icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    animation: bull 1s linear ;
+}
+
+@keyframes bull {
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(0.4);
+    }
+    50%{
+        transform: scale(0.2);
+    }
+    75%{
+        transform: scale(0.8);
+    }
+    85%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.one-feed .actions div div.count{
+    font-size: small;
+    letter-spacing: 2px;
+}
+
+.spinner{
+    width: 20px;
+    height: 20px;
+    border: solid 2px white;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 50%;
+    animation: rotat 0.35s infinite linear;
+}
+
+@keyframes rotat {
+    to{
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,194 @@
+#auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+#auth .welcome{
+    position: relative;
+    width: 55%;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    background-color: rgb(39, 95, 95);
+}
+
+#auth .welcome::after{
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    content: "";
+    width: 70%;
+    height: 25%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgb(29, 29, 29);
+}
+
+#auth .welcome h1{
+    font-size: 3em;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#auth .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 55%;
+    height: 90%;
+    background-color: rgb(31, 31, 31);
+}
+
+#auth .form-container .float-form{
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    padding-inline: 25px;
+    width: 70%;
+    height: 80%;
+    background: linear-gradient(to bottom, rgb(29, 29, 29), rgb(29, 29, 29), rgb(31, 31, 31));
+}
+
+#auth .form-container .float-form h1{
+    font-weight: normal;
+}
+
+#auth .form-container .float-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#auth .form-container form div{
+    display: flex;
+    gap: 5px;
+    padding: 12px;
+    width: 100%;
+    background-color: rgb(212, 211, 211);
+    border-radius: 3px;
+}
+
+#auth .form-container form div input{
+    font-size: medium;
+    color: black;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#auth .form-container form button{
+    padding: 10px;
+    font-size: large;
+    background-color: rgb(39, 95, 95);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+#auth .form-container .float-form .lines{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#auth .form-container .float-form .lines .line{
+    height: 1px;
+    width: 90%;
+    background-color: white;
+}
+
+#auth .form-container .float-form .option{
+    text-align: start;
+    width: 100%;
+}
+
+#auth .form-container .float-form .option span{
+    color: rgb(12, 85, 85);
+}
+
+#auth .form-container .float-form .option span:hover{
+    color: rgb(13, 129, 129);
+    cursor: pointer;
+}
+
+.loader-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.error{
+    position: absolute;
+    min-width: 30px;
+    min-height: 30px;
+    padding-inline: 6px;
+    color: red;
+    border-radius: 5px;
+    text-align: start;
+}
+
+.loader-container .spinner{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: solid 3px white;
+    border-bottom: solid 2px rgb(29, 29, 29);
+    animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*----------------- Responsive CSS -----------------*/
+
+@media screen and (max-width: 819px) {
+    #auth .welcome, #auth .form-container{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 577px) {
+    #auth .welcome, #auth .form-container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #auth .welcome, #auth .form-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #auth{
+        height: 100%;
+    }
+    
+    #auth .form-container .float-form{
+        width: 90%;        
+    }
+
+    #auth .welcome::after{
+        width: 90%;
+        left: 5%;
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+    #auth .form-container .float-form{
+        padding-inline: 15px;
+        width: 100%;
+    }
+}

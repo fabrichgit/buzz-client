@@ -1,0 +1,38 @@
+#wall-section{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#wall-section .swicthers{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    background-color: transparent;
+}
+
+#wall-section .swicthers button{
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#wall.section{
+    overflow-y: scroll;
+}
+
+#wall-section::-webkit-scrollbar{
+    width: 5px;
+}
+
+#wall-section::-webkit-scrollbar-thumb{
+    background-color: rgb(42, 122, 122);
+}

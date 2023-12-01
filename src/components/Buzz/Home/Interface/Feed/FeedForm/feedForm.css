@@ -1,0 +1,211 @@
+.feedform-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.feedform-section form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.feedform-section form .post-loader{
+    width: 0%;
+    height: 5px;
+    background-color: rgb(34, 185, 185);
+}
+
+.half-load{
+    animation: half-load 1s ease-out forwards;
+}
+.final-load{
+    animation: final-load 0.5s ease-out forwards;
+}
+@keyframes half-load{
+    to{
+        width: 50%;
+    }
+}
+@keyframes final-load {
+    90%{
+        width: 100%;
+    }
+    99%{
+        background-color: rgb(19, 20, 20);
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+.feedform-section form .input-text{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 17px;
+    padding-left: 13px;
+    background-color: rgb(19, 20, 20);
+}
+
+.feedform-section form .input-text input{
+    font-size: medium;
+    height: max-content;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.feedform-section form .input-text .userCircle{
+    width: 40px;
+    height: 40px;
+}
+
+.feedform-section form .btns-controller{
+   display: flex;
+   justify-content: space-between;
+   padding-block: 13px;
+   padding-inline: 17px;
+   width: 100%;
+   background-color: rgb(19, 20, 20);
+}
+
+.feedform-section form .btns-controller .btn-input{
+    display: flex;
+    gap: 20px;
+}
+
+.feedform-section form .btns-controller .btn-input .btn-item{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.feedform-section form .btns-controller .btn-input .btn-item div{
+    color: white;
+    font-size: small;
+}
+
+.feedform-section form .btns-controller .btn-input .btn-item .icon{
+    fill: rgb(34, 185, 185);
+}
+
+.feedform-section form .btns-controller div .btn-item{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.feedform-section form .btns-controller div .btn-item.enterData{
+    position: relative;
+}
+
+.feedform-section form .btns-controller .btn-input .btn-item.enterData .status{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 0;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.feedform-section form .btns-controller div .btn-item .icon{
+    width: 17px;
+    height: auto;
+}
+
+.feedform-section form .btns-controller .btn-share button{
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+.inputHide{
+    display: none;
+}
+
+
+
+
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    font-size: small;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+  
+.dropdown-mood {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-mood:hover .dropdown-content {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+}
+  
+.dropdown-mood .dropdown-content .drop-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 5px 12px;
+    background-color: rgb(224, 221, 221);
+}
+
+.dropdown-mood .dropdown-content .drop-item div{
+    color: black !important;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+
+
+
+@media screen and (max-width: 377px) {
+    .feedform-section form .btns-controller div .btn-item.controller div{
+        display: none;
+    }
+    .feedform-section form .btns-controller div .btn-item.dropdown-mood .dropbtn div{
+        display: none;
+    }
+    .dropdown-mood .dropdown-content .drop-item div{
+        display: none;
+    }
+    .feedform-section form .btns-controller .btn-share button{
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: 50%;
+    }
+    .feedform-section form .btns-controller div .btn-item .icon{
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media screen and (max-width: 273px){
+    .feedform-section form .input-text{
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,9 @@
+#buzzApp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(41, 41, 41);
+    overflow: hidden;
+}

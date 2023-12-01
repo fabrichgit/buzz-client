@@ -1,0 +1,16 @@
+#feeds-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#feeds-section::-webkit-scrollbar{
+    width: 5px;
+}
+
+#feeds-section::-webkit-scrollbar-thumb{
+    background-color: rgb(42, 122, 122);
+}

@@ -1,0 +1,128 @@
+#tips-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    width: 23%;
+    height: 100%;
+}
+
+#tips-section .tip1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 10px;
+    gap: 10px;
+    width: 100%;
+}
+
+#tips-section .tip1 .head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: rgb(23, 168, 168);
+}
+
+#tips-section .tip1 .head .icon{
+    animation: logoRotate 3s infinite linear;
+}
+#tips-section .tip1 .head div span{
+    font-style: oblique;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tips-section .tip1 .text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#tips-section .tip1 .text .item{
+    text-align: start;
+}
+
+#tips-section .tip1 .text .item > div:nth-child(1){
+    color: rgb(57, 128, 128);
+}
+
+#tips-section .tip1 .text .item > div:nth-child(2){
+    color: rgb(194, 194, 194);
+    font-style: italic;
+}
+
+#tips-section .tip1 .text .item > div:nth-child(2) span{
+    font-style: oblique;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tips-section .tip2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(19, 20, 20);
+}
+
+#tips-section .tip2 .admin-descr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+#tips-section .tip2 .admin-descr .admin-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#tips-section .tip2 .admin-descr .icon{
+    width: 30px;
+    height: 30px;
+}
+
+#tips-section .tip2 .btn-contact{
+    width: 100%;
+}
+
+#tips-section .tip2 .btn-contact button{
+    padding-block: 10px;
+    padding-inline: 15px;
+    border-radius: 15px;
+    background-color: rgb(10, 95, 95);
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@keyframes logoRotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 880px){
+
+    #tips-section{
+        gap: 7%;
+    }
+
+    #tips-section .tip1 .text .item > div:nth-child(1){
+        text-decoration: underline;
+    }
+
+    #tips-section .tip1 .text .item > div:nth-child(2){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #tips-section{
+        display: none;
+    }
+}

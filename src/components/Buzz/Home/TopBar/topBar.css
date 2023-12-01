@@ -1,0 +1,149 @@
+#topbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(19, 20, 20);
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    padding-left: 10px;
+    width: 25%;
+}
+
+.logo-container div{
+    font-size: 2em;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logo-container .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    animation: logoRotate 3s infinite linear;
+}
+
+.searchbar-container{
+    text-align: start;
+    padding-left: 2%;
+    width: 52%;
+}
+
+.searchbar-container > div{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px;
+    width: 60%;
+    border-radius: 8px;
+    background-color: rgb(9, 10, 10);
+}
+
+.searchbar-container > div input{
+    width: 100%;
+    font-size: medium;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.right-container{
+    text-align: end;
+    padding-right: 2%;
+    width: 23%;
+}
+
+.right-container .icon{
+
+    display: none;
+}
+
+.right-container button{
+    padding: 7px;
+    background-color: rgb(10, 95, 95);
+    color: whitesmoke;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-container .userCircle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+
+@keyframes logoRotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .logo-container{
+        display: flex;
+    }
+    .logo-container span{
+        display: flex;
+        font-size: 0.5em;
+    }
+
+    .searchbar-container{
+        padding-left: 0;
+    }
+
+    .searchbar-container > div{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .right-container{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .logo-container{
+        width: max-content;
+    }
+    .logo-container span{
+        display: none;
+    }
+    .right-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: max-content;
+    }
+    .right-container .icon{
+        display: flex;
+        width: 25px;
+        height: 25px;
+    }
+    .right-container div{
+        display: none;
+    }
+    .searchbar-container{
+        display: none;
+    }
+    #topbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
