@@ -18,13 +18,6 @@
     width: 100%;
     height: 100%;
     transform: rotate(-6deg);
-    animation: rotat 0.5s ease-out;
-}
-
-@keyframes rotat {
-    to{
-        transform: rotate(360deg);
-    }
 }
 
 #bubbleMenu .container div{

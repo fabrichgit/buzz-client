@@ -4,53 +4,45 @@ import "./bar.css";
 
 function Bar({setPartState}) {
 
-    const {idProfil, id} = useParams();
-
     const [classCss, setClassCss] = useState({
         "info": true,
         "edit": false
-    });
-    
-    useEffect(()=>{
-        if (classCss.info) {
-            setPartState('info');
-        }else if (classCss.edit) {
-            setPartState('edit');
-        }
-    }, [classCss])
+    })
+
+    const {idProfil, id} = useParams();
 
     const switching = (name)=>{
         console.log(name);
+        setPartState(name);
         switch (name) {
             case 'info':
-                {
-                    setClassCss({
-                        "edit": false, "info": true
-                    });
-                }
+                setClassCss({
+                    "info": true, "edit": false
+                })
                 break;
             case 'edit':
-                {
-                    setClassCss({
-                        "info": false, "edit": true
-                    });
-                }
+                setClassCss({
+                    "info": false, "edit": true
+                })
+            case 'post':
+                setClassCss({
+                    "info": false, "edit": false
+                })
             default:
                 break;
         }
-        console.log(classCss);
     }
 
     return (
         <div className="nav">
             <div className="items">
-                <div className={classCss.info?'active':'item'} name="info" onClick={()=>switching('info')}>Information</div>
+                <div className={classCss?.info?'active':'item'} name="info" onClick={()=>switching('info')}>Information</div>
                 {
                     idProfil===id &&
-                    <div className={classCss.edit?'active':'item'} name="edit" onClick={()=>switching('edit')}>Edit</div>
+                    <div className={classCss?.edit?'active':'item'} name="edit" onClick={()=>switching('edit')}>Edit</div>
                 }
             </div>
-            <div className="btn item">Your Feeds</div>
+            <div className="btn item"  name="post" onClick={()=>switching('post')}>All of {idProfil===id?"your":"his"} Feeds</div>
         </div>
     )
 }

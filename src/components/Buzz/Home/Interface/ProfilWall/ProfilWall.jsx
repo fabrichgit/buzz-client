@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Routes, Route } from 'react-router-dom';
 
 import "./profilWall.css";
 import "./../Feed/FeedView/feedView.css";
@@ -10,12 +9,12 @@ import { useEffect } from "preact/hooks";
 import axios from "axios";
 import constants from "../../../../../Contants/constants";
 import isAuth from "../../../../../Axios/isAuth";
-import YourPost from "./YourPost/YourPost";
 import useUser from "../../../../../hooks/useUser";
 import Bar from "./Bar/Bar";
 import Pdp from "./Pdp/Pdp";
 import Info from "./Info/Info";
 import Edit from "./Edit/Edit";
+import Post from "./Post/Post";
 
 function ProfilWall() {
     const [feedsMine, setFeedsMine] = useState([]);
@@ -40,12 +39,6 @@ function ProfilWall() {
                 })
         }
     }, []);
-    console.log(pth);
-    // const switchTo = (e)=>{
-    //     e.preventDefault();
-    //     const name = e.target.name;
-    //     Navigate(window.location.pathname+`/${name}`)
-    // }
 
     const part = ()=>{
         switch (partState) {
@@ -58,11 +51,23 @@ function ProfilWall() {
         }
     }
 
+    const partOfWall = ()=>{
+        if (partState!=='post') {
+            return (
+                <>
+                    <Pdp user={user}/>
+                    <Bar setPartState={setPartState}/>
+                    <>{part()}</>
+                </>                
+            )
+        }else{
+            return <Post setPartState={setPartState}/>
+        }
+    }
+
     return (
         <section id="wall-section">
-            <Pdp user={user}/>
-            <Bar setPartState={setPartState}/>
-            {part()}
+            <>{partOfWall()}</>
         </section>
     )
 }

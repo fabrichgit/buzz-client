@@ -5,7 +5,7 @@ import ToggleProfil from "../../../../../../methods/BuzzMethods/ToggleProfil.jsx
 
 import { useState, useEffect } from "react";
 
-function FeedForm({user, isLoad, feedCreateController, handlePostFeed}) {
+function FeedForm({user, isLoad, feedCreateController, handlePostFeed, isError}) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -75,6 +75,7 @@ function FeedForm({user, isLoad, feedCreateController, handlePostFeed}) {
         if (name==="image") {
             const formData = new FormData();
             formData.append('file', e.target.files[0]);
+            formData.append('upload_preset', 'bgjvp2ju');
             feedCreateController.setFeedCreate({...feedCreateController.feedToCreate, [name]: formData});
             setIsThere({...isThere, image: true});
         }
@@ -150,9 +151,13 @@ function FeedForm({user, isLoad, feedCreateController, handlePostFeed}) {
 
     const toggleLoad = ()=>{
         if (isLoad==='go') {
-            return "post-loader half-load";
+            return <div className="post-loader">
+                        <div className="half-load"></div>
+                    </div>;
         }else if (isLoad==='end') {
-            return "post-loader final-load";
+            return <div className="post-loader">
+                        <div className="final-load"></div>
+                    </div>;
         }
     }
 
@@ -161,9 +166,9 @@ function FeedForm({user, isLoad, feedCreateController, handlePostFeed}) {
             <form action="postFeed" method="post"  encType="multipart/form-data" onSubmit={post} onReset={handleReset}>
                 <div className="input-text">
                     {ToggleProfil.profilValue(user)}
-                    <input type="text" name="text" id="text" placeholder={`What's up ${user?.username.toLowerCase()}...`} value={feedCreateController.feedToCreate.text} onChange={(e)=>handleChangeFeedCreate(e)}/>
+                    <input type="text" name="text" id="text" placeholder={user?.username?`What's up ${user?.username.toLowerCase()}...`:"What's up..."} value={feedCreateController.feedToCreate.text} onChange={(e)=>handleChangeFeedCreate(e)}/>
                 </div>
-                <div className={toggleLoad()}></div>
+                {toggleLoad()}
                 <div className="btns-controller">
                     <div className="btn-input">
                         
@@ -209,6 +214,10 @@ function FeedForm({user, isLoad, feedCreateController, handlePostFeed}) {
                         </button>
 
                     </div>
+                    {
+                        isError &&
+                        <div style={{color: 'red', fontWeight: 'bold'}}>Error !</div>
+                    }
                     <div className="btn-share">
                         <button type="submit" className="btn-item controller" style={statusManager('share')}>
                             <div>Share</div>

@@ -83,10 +83,13 @@ function TemplateFeed({user, feed, feeds, setFeed}) {
                     </div>  :
                     <div className="spinner"></div>
                 }
-                <div className="comment">
-                    <div className="count"></div>
-                    <CgComment className="icon"/>
-                </div>
+                {
+                    false &&
+                    <div className="comment">
+                        <div className="count"></div>
+                        <CgComment className="icon"/>
+                    </div>
+                }
             </div>
         </div>
     )
