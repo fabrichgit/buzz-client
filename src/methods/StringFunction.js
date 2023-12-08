@@ -1,4 +1,4 @@
-import {v4 as uuid} from "uuid"
+import {v4 as uuid} from "uuid";
 
 function isValidateUsername(name) {
     const nameArray = name.split('');

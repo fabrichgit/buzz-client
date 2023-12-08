@@ -4,9 +4,9 @@ import "./login.css";
 
 import { useState, useEffect } from 'react';
 import StringFunction from "../../../../methods/StringFunction";
-import StorageFunction from "../../../../methods/StorageFunction";
 import isAuth from "../../../../Axios/isAuth";
 import authAxios from "../../../../Axios/authAxios";
+import StorageFunction from "../../../../methods/StorageFunction";
 
 function Login() {
 
