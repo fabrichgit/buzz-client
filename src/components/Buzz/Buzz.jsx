@@ -11,13 +11,14 @@ import useUser from "../../hooks/useUser";
 function Buzz() {
     return (
         <div id="buzzApp">
-            <Router>
+            <Login/>
+            {/* <Router>
                 <Routes>
                     <Route path="/login" element={<Login/>} />
                     <Route path="/register" element={<Register/>} />
                     <Route path="/home/:id/*" element={<Home/>} />
                 </Routes>
-            </Router>
+            </Router> */}
         </div>
     )
 }
