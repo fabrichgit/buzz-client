@@ -32,7 +32,7 @@ function BubbleMenu({bubbleStyle, hideMenu}) {
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'feed':'feed showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <BiSolidHome className="icon" onClick={()=>switchTo('/home/feed')}/>
+                    <BiSolidHome className="icon" onClick={()=>switchTo('/buzz-deploy/home/feed')}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'chat':'chat showAnimation'}
@@ -56,7 +56,7 @@ function BubbleMenu({bubbleStyle, hideMenu}) {
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'logout':'logout showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <BiLogOut className="icon" onClick={()=>switchTo('/login')}/>
+                    <BiLogOut className="icon" onClick={()=>switchTo('/buzz-deploy/login')}/>
                 </div>
             </div>
         </section>

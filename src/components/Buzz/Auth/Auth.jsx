@@ -40,9 +40,9 @@ function Auth({title, setData, loadStatus, errorStatus}) {
     const handleSwicth = (title)=>{
         console.log('swicth');
         if (title=='Sign up') {
-            Navigate('/login');
+            Navigate('/buzz-deploy/login');
         }else{
-            Navigate('/register');
+            Navigate('/buzz-deploy/register');
         }
     }
 
