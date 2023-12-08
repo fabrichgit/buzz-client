@@ -1,5 +1,5 @@
 const pathToServer = (path)=>{
-    return `http://localhost:3000${path}`;
+    return `https://buzz-6xdj.onrender.com${path}`;
 }
 
 export default {
