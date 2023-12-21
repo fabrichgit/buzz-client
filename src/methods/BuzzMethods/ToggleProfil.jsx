@@ -9,14 +9,14 @@ function profilValue(user) {
     const {id} = useParams();
     
     const goProfile = (idProfil)=>{
-        const pth = `/home/${id}/profil/${idProfil}`;
+        const pth = `/home/${id}/profil/${user.id}`;
         Navigate(pth);
     }
 
     if (user?.pathProfile) {
-        return <img src={user.pathProfile} alt={user?.username} className="userCircle" onClick={()=>goProfile(user?.id)} style={{cursor: 'pointer'}}/>
+        return <img src={user.pathProfile} alt={user?.username} className="userCircle" onClick={goProfile} style={{cursor: 'pointer'}}/>
     }else{
-        return <FaUserCircle className="userCircle" onClick={()=>goProfile(user?.id)} style={{cursor: 'pointer'}}/>
+        return <FaUserCircle className="userCircle" onClick={goProfile} style={{cursor: 'pointer'}}/>
     }
 }
 

@@ -1,4 +1,4 @@
-import { BiSolidFace, BiSolidHappy, BiSolidHeart, BiSolidLaugh, BiSolidPaperPlane, BiSolidPhotoAlbum, BiSolidPlane, BiSolidSad, BiSolidSend } from "react-icons/bi";
+import { BiImageAdd, BiSolidFace, BiSolidHappy, BiSolidHeart, BiSolidLaugh, BiSolidPaperPlane, BiSolidPhotoAlbum, BiSolidPlane, BiSolidSad, BiSolidSend } from "react-icons/bi";
 import "./feedForm.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import ToggleProfil from "../../../../../../methods/BuzzMethods/ToggleProfil.jsx";
@@ -202,7 +202,7 @@ function FeedForm({user, isLoad, feedCreateController, handlePostFeed, isError})
                         </button>
 
                         <label htmlFor="image" className="btn-item controller enterData">
-                            <BiSolidPhotoAlbum className="icon" style={statusManager('image').fill}/>
+                            <BiImageAdd className="icon" style={statusManager('image').fill}/>
                             <div>Add photo</div>
                             <div className="status" style={statusManager('image').display}></div>
                             <input type="file" className="inputHide" name="image" id="image" accept="image/*" onChange={(e)=>handleChangeFeedCreate(e)}/>

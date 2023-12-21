@@ -75,20 +75,13 @@ function TemplateFeed({user, feed, feeds, setFeed}) {
                 <img src={feed.image} alt={feed.from} className="image-feed"/>
             }
             <div className="actions">
+                <div className="like" onClick={()=>reacting(feed, user)}>
+                    <div className="count">{feed.reactions?.length}</div>
+                    <AiTwotoneHeart className="icon" style={feed.reactions?.includes(user?.id)?{fill: 'rgb(34, 185, 185)'}:{fill: 'white'}}/>
+                </div>
                 {
-                    !loadReact.includes(feed.id) ?
-                    <div className="like" onClick={()=>reacting(feed, user)}>
-                        <div className="count">{feed.reactions?.length}</div>
-                        <AiTwotoneHeart className="icon" style={feed.reactions?.includes(user?.id)?{fill: 'rgb(34, 185, 185)'}:{fill: 'white'}}/>
-                    </div>  :
+                    loadReact.includes(feed.id) &&
                     <div className="spinner"></div>
-                }
-                {
-                    false &&
-                    <div className="comment">
-                        <div className="count"></div>
-                        <CgComment className="icon"/>
-                    </div>
                 }
             </div>
         </div>

@@ -26,7 +26,7 @@ function Register() {
             StorageFunction.setIdSession(data);
             setLoadStatus(false);
             setErrorStatus(false);
-            Navigate(`/buzz-deploy/home/${data}/profil/${data}/infowall`);
+            Navigate(`/home/${data}/feed`);
             },
             (err)=>{
                 setErrorStatus(true);

@@ -23,43 +23,43 @@ function BubbleMenu({bubbleStyle, hideMenu}) {
         <section id="bubbleMenu" style={bubbleStyle.indexOfBubbleContainer}>
             <div className="container">
                 <div className="search">
-                    <AiOutlineSearch className="icon" onClick={()=>switchTo(`/buzz-deploy/home/${id}`)}/>
+                    <AiOutlineSearch className="icon" onClick={()=>switchTo(`/home/${id}`)}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'profil':'profil showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <FaUserCircle className="icon" onClick={()=>switchTo(`/buzz-deploy/home/${id}/profil/${id}`)}/>
+                    <FaUserCircle className="icon" onClick={()=>switchTo(`/home/${id}/profil/${id}`)}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'feed':'feed showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <BiSolidHome className="icon" onClick={()=>switchTo(`/buzz-deploy/home/${id}/feed`)}/>
+                    <BiSolidHome className="icon" onClick={()=>switchTo(`/home/${id}/feed`)}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'chat':'chat showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <AiFillWechat className="icon" onClick={()=>{switchTo(`/buzz-deploy/home/${id}/chat`)}}/>
+                    <AiFillWechat className="icon" onClick={()=>{switchTo(`/home/${id}/chat`)}}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'setting':'setting showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <AiFillSetting className="icon" onClick={()=>switchTo(`/buzz-deploy/home/${id}/settings`)}/>
+                    <AiFillSetting className="icon" onClick={()=>switchTo(`/home/${id}/settings`)}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'feedback':'feedback showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <FaBookOpen className="icon" onClick={()=>switchTo(`/buzz-deploy/home/${id}/feedback`)}/>
+                    <FaBookOpen className="icon" onClick={()=>switchTo(`/home/${id}/feedback`)}/>
                 </div>
                 <div 
                     className={BubbleMenuCss.styleController.isInitial(bubbleStyle)?'logout':'logout showAnimation'}
                     style={bubbleStyle.paddingOpacityOfBubble}
                 >
-                    <BiLogOut className="icon" onClick={()=>switchTo('/buzz-deploy/login')}/>
+                    <BiLogOut className="icon" onClick={()=>switchTo('/login')}/>
                 </div>
             </div>
         </section>

@@ -1,0 +1,129 @@
+.edit{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    background-color: rgb(19, 20, 20);
+    border-radius: 5px;
+}
+
+.edit .spin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.edit .spin-container .spinner{
+    width: 30px;
+    height: 30px;
+}
+
+.edit .list-edit{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: max-content;
+}
+
+.edit .list-edit .item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.edit .list-edit .item label{
+    cursor: pointer;
+}
+
+.edit .list-edit .item .result{
+    width: 30%;
+}
+
+.edit .list-edit .item .result input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+}
+
+.edit .list-edit .item .result.img{
+    width: 100px;
+    height: 100px;
+}
+
+.edit .list-edit .item .result.img img{
+    width: 100%;
+    height: 100%;
+}
+
+.edit .list-edit .item.bio .result span{
+    font-style: italic;
+    font-size: small;
+}
+
+.edit .list-edit .line{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(26, 43, 43);
+}
+
+.edit .btns-controller{
+    display: flex;
+    gap: 20px;
+}
+
+.edit .btns-controller .edit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(39, 104, 104);
+}
+
+.edit .btns-controller .edit-btn:hover{
+    background-color: rgb(40, 124, 124);
+}
+
+.edit .btns-controller{
+    position: absolute;
+    bottom: 10px;
+}
+
+.bull{
+    animation: bull 10s infinite ease-out;
+}
+@keyframes bull {
+    0%{
+        border-radius: 50% 70% 20% 50%;
+    }
+    20%{
+        border-radius: 40% 70% 30% 50%;
+    }
+    40%{
+        border-radius: 80% 60% 20% 30%;
+    }
+    60%{
+        border-radius: 50% 70% 80% 50%;
+    }
+    80%{
+        border-radius: 70% 50% 50% 50%;
+    }
+    100%{
+        border-radius: 50% 70% 20% 50%;
+    }
+}

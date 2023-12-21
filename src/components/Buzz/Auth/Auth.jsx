@@ -7,7 +7,6 @@ import "./auth.css";
 function Auth({title, setData, loadStatus, errorStatus}) {
 
     const [formData, setFormData] = useState({});
-
     const Navigate = useNavigate();
 
     const addConfirmPassword = (title)=>{
@@ -25,24 +24,15 @@ function Auth({title, setData, loadStatus, errorStatus}) {
         if (title=='Sign up') {
             return(
                 <div className="option">
-                    Already have an account? <span onClick={()=>handleSwicth(title)}>Sign in</span>
+                    Already have an account? <span onClick={()=>Navigate('/login')}>Sign in</span>
                 </div>   
             )
         }else{
             return(
                 <div className="option">
-                    Don't have an account? <span onClick={()=>handleSwicth(title)}>Sign up</span>
+                    Don't have an account? <span onClick={()=>Navigate('/register')}>Sign up</span>
                 </div>
             )
-        }
-    }
-
-    const handleSwicth = (title)=>{
-        console.log('swicth');
-        if (title=='Sign up') {
-            Navigate('/buzz-deploy/login');
-        }else{
-            Navigate('/buzz-deploy/register');
         }
     }
 

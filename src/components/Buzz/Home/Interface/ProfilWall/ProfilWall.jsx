@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
 import "./profilWall.css";
 import "./../Feed/FeedView/feedView.css";
@@ -17,13 +16,15 @@ import Edit from "./Edit/Edit";
 import Post from "./Post/Post";
 
 function ProfilWall() {
+
     const [feedsMine, setFeedsMine] = useState([]);
     const [partState, setPartState] = useState('info');
-    const Navigate = useNavigate();
+
+    const [info, setInfo] = useState(true);
+    const [edit, setEdit] = useState(false);
 
     const {idProfil, id} = useParams();
     const {user, setUser} = useUser(idProfil);
-    const pth = `/home/${id}/profil/${idProfil}`;
 
     useEffect(async ()=>{
         const authStatus = await isAuth(id);
@@ -43,9 +44,9 @@ function ProfilWall() {
     const part = ()=>{
         switch (partState) {
             case 'info':
-                return <Info/>
+                return <Info setPartState={setPartState} setEdit={setEdit} setInfo={setInfo}/>
             case 'edit':
-                return <Edit/>
+                return <Edit setPartState={setPartState} setEdit={setEdit} setInfo={setInfo}/>
             default:
                 break;
         }
@@ -55,13 +56,13 @@ function ProfilWall() {
         if (partState!=='post') {
             return (
                 <>
-                    <Pdp user={user}/>
-                    <Bar setPartState={setPartState}/>
+                    <Pdp user={user} setPartState={setPartState} setEdit={setEdit} setInfo={setInfo}/>
+                    <Bar setPartState={setPartState} info={info} edit={edit} setInfo={setInfo} setEdit={setEdit}/>
                     <>{part()}</>
                 </>                
             )
         }else{
-            return <Post setPartState={setPartState}/>
+            return <Post setPartState={setPartState} setEdit={setEdit} setInfo={setInfo}/>
         }
     }
 

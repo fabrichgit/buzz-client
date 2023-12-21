@@ -2,14 +2,14 @@ import "./navbar.css";
 import { FaBookOpen } from "react-icons/fa";
 import { AiFillSetting, AiFillWechat } from "react-icons/ai";
 import { BiSolidHome } from "react-icons/bi";
-import ToggleProfil from "../../../../methods/BuzzMethods/ToggleProfil.jsx";
 import { useNavigate } from "react-router";
-import { useRef } from "preact/hooks";
 import useUser from "../../../../hooks/useUser.js";
+import ToggleProfil from "../../../../methods/BuzzMethods/ToggleProfil.jsx";
 
 function Navbar() {
+
     const {user, setUser} = useUser();
-    console.log(user);
+
     const Navigate = useNavigate();
 
     const switchTo = (path)=>{
@@ -22,7 +22,7 @@ function Navbar() {
                 {ToggleProfil.profilValue(user)}
                 <div>
                     <h1>{user?.username}</h1>
-                    <div>your profil</div>
+                    <div>{user?.bio? user?.bio : "don't have bio"}</div>
                 </div>
             </div>
             <div className="navigation-container">

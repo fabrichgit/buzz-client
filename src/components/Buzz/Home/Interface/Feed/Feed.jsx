@@ -8,6 +8,7 @@ import DateMethods from "../../../../../methods/Date";
 import { useEffect } from "preact/hooks";
 import axios from "axios";
 import constants from "../../../../../Contants/constants";
+import imageToCloud from "../../../../../Axios/imageTocloud";
 
 function Feed({user}) {
 
@@ -28,7 +29,7 @@ function Feed({user}) {
                     {
                         id: uuid(),
                         text: 'I am Arthur alias Aquaman, the King of Ocean',
-                        image: 'http://localhost:3000/fiction3.jpg',
+                        image: constants.pathToServer('/fiction3.jpg'),
                         mood: 'angry',
                         from: {username: 'FABRICH'},
                         when: '2023-10-31 10:59'
@@ -49,7 +50,7 @@ function Feed({user}) {
         try {
 
             const imgPosting = async ()=>{
-                axios.post('https://api.cloudinary.com/v1_1/cloudfabrich/image/upload', feedToPost.image)
+                imageToCloud(feedToPost.image)
                 .then(async (response)=>{
                     console.log(response.data);
                     await postAll(response.data.secure_url);

@@ -1,0 +1,14 @@
+// vite.config.js
+import { defineConfig } from "file:///media/Fabrich/Disque/ElectiNet/eleectinet/node_modules/vite/dist/node/index.js";
+import preact from "file:///media/Fabrich/Disque/ElectiNet/eleectinet/node_modules/@preact/preset-vite/dist/esm/index.mjs";
+var vite_config_default = defineConfig({
+  plugins: [preact()]
+  // base: '/',
+  // build: {
+  //   outDir: 'dist',
+  // },
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvbWVkaWEvRmFicmljaC9EaXNxdWUvRWxlY3RpTmV0L2VsZWVjdGluZXRcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9tZWRpYS9GYWJyaWNoL0Rpc3F1ZS9FbGVjdGlOZXQvZWxlZWN0aW5ldC92aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vbWVkaWEvRmFicmljaC9EaXNxdWUvRWxlY3RpTmV0L2VsZWVjdGluZXQvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBkZWZpbmVDb25maWcgfSBmcm9tICd2aXRlJ1xuaW1wb3J0IHByZWFjdCBmcm9tICdAcHJlYWN0L3ByZXNldC12aXRlJ1xuXG4vLyBodHRwczovL3ZpdGVqcy5kZXYvY29uZmlnL1xuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgcGx1Z2luczogW3ByZWFjdCgpXSxcbiAgLy8gYmFzZTogJy8nLFxuICAvLyBidWlsZDoge1xuICAvLyAgIG91dERpcjogJ2Rpc3QnLFxuICAvLyB9LFxufSlcblxuIl0sCiAgIm1hcHBpbmdzIjogIjtBQUFnVCxTQUFTLG9CQUFvQjtBQUM3VSxPQUFPLFlBQVk7QUFHbkIsSUFBTyxzQkFBUSxhQUFhO0FBQUEsRUFDMUIsU0FBUyxDQUFDLE9BQU8sQ0FBQztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBS3BCLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==

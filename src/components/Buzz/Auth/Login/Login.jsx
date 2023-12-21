@@ -4,7 +4,6 @@ import "./login.css";
 
 import { useState, useEffect } from 'react';
 import StringFunction from "../../../../methods/StringFunction";
-import isAuth from "../../../../Axios/isAuth";
 import authAxios from "../../../../Axios/authAxios";
 import StorageFunction from "../../../../methods/StorageFunction";
 
@@ -20,22 +19,27 @@ function Login() {
         const dataToFecth = StringFunction.parseDataAuth({...formDataLog});
         setLoadStatus(true);
 
-        const authStatus = await isAuth();
+        // const authStatus = await isAuth();
 
-        authAxios.login(
-            dataToFecth,
-            (data)=>{
-                console.log(data);
-                StorageFunction.setIdSession(data);
-                setLoadStatus(false);
-                setErrorStatus(false);
-                Navigate(`/buzz-deploy/home/${data}/profil/${data}/infowall`);
-            },
-            (err)=>{
-                setLoadStatus(false);
-                setErrorStatus(true);
-            }
-        )
+        try {
+            authAxios.login(
+                dataToFecth,
+                (data)=>{
+                    console.log(data);
+                    StorageFunction.setIdSession(data);
+                    setLoadStatus(false);
+                    setErrorStatus(false);
+                    Navigate(`/home/${data}/feed`);
+                },
+                (err)=>{
+                    setLoadStatus(false);
+                    setErrorStatus(true);
+                }
+            )
+        } catch (error) {
+            setLoadStatus(false);
+            setErrorStatus(true);
+        }
     }
 
     useEffect(()=>{

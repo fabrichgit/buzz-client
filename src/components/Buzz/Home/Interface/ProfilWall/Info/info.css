@@ -1,6 +1,51 @@
-.info{
+.info.wall{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 40%;
+    padding: 10px;
     background-color: rgb(19, 20, 20);
     border-radius: 5px;
+}
+
+.info .list-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: max-content;
+}
+
+.info .list-info .item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info .list-info .item.bio .result span{
+    font-style: italic;
+    font-size: small;
+}
+
+.info .list-info .line{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(26, 43, 43);
+}
+
+.info .edit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    width: 100%;
+    padding-block: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(39, 104, 104);
+}
+
+.info .edit-btn:hover{
+    background-color: rgb(40, 124, 124);
 }
